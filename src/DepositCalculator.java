@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CalculateDeposit {
+public class DepositCalculator {
     double calculateComplexPercent(double a, double y, int d) {
         double pay = a * Math.pow((1 + y / 12), 12 * d);
 
@@ -17,7 +17,7 @@ public class CalculateDeposit {
         return Math.round(value * scale) / scale;
     }
 
-    void doImportantJob() {
+    void calculateDeposit() {
         int period;
         int action;
         int amount;
@@ -33,18 +33,18 @@ public class CalculateDeposit {
         System.out.println("Выберите тип вклада, 1 - вклад с обычным процентом, 2 - вклад с капитализацией:");
         action = scanner.nextInt();
 
-        double contribution = 0;
+        double deposit = 0;
 
         if (action == 1)  {
-            contribution = calculateSimplePercent(amount, 0.06, period);
+            deposit = calculateSimplePercent(amount, 0.06, period);
         } else if (action == 2) {
-            contribution = calculateComplexPercent(amount, 0.06, period);
+            deposit = calculateComplexPercent(amount, 0.06, period);
         }
 
-        System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + contribution);
+        System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + deposit);
     }
 
     public static void main(String[] args) {
-        new CalculateDeposit().doImportantJob();
+        new DepositCalculator().calculateDeposit();
     }
 }
