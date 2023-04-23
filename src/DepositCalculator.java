@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class DepositCalculator {
-    double calculateComplexPercent(double a, double y, int d) {
+    double calculateComplexPercent(double a, double y, int d) { // В целом все отлично но переменные буквами не совсем понятны за что отвечают и надо искать в коде
         double pay = a * Math.pow((1 + y / 12), 12 * d);
 
         return round(pay, 2);
@@ -24,7 +24,7 @@ public class DepositCalculator {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Введите сумму вклада в рублях: ");
+        System.out.println("Введите сумму вклада в рублях: "); 
         amount = scanner.nextInt();
 
         System.out.println("Введите срок вклада в годах:");
